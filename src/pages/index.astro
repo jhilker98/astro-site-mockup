@@ -3,20 +3,32 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 const posts = await getCollection("blog");
 const pageTitle = "Home";
+
+const headline: string = "Hi, I'm Jacob";
+const cta: string = "I'm a Freelance Web Developer"
+const availableForHire: boolean = true;
 ---
 
-
-		<Layout title="Home">
-		<h1>Astro</h1>
-		{
-			posts.map((post) => {
-				return (
-					<article>
-						<h2>
-							<a href=`/blog/${post.data.date.getFullYear()}/${post.data.date.getMonth().toString().padStart(2, "0")}/${post.slug}`>{post.data.title}</a>
-							</h2>
-							</article>
-				);
-			})
-		}
-	</Layout>
+<Layout title="Home">
+	<section class="bg-myblue-800 text-white">
+		<h1 class="text-4xl font-bold uppercase lg:text-6xl px-4 py-4 mb-4">
+			{headline}
+		</h1>
+		<p class="text-3xl font-semibold mx-4">{cta}</p>
+		<p
+			class="ml-4 mt-4 max-w-[80ch] leading-10 lg:text-lg lg:leading-[2.25]"
+		>
+			I am primarily focused on creating accessible, performant, and
+			easy-to-use websites using free and open-source technologies such as
+			TailwindCSS, Hugo, and Astro. {
+				availableForHire
+					? "I'm currently available for hire, so feel free to reach out using the button below."
+					: ""
+			}
+		</p>
+		<button
+			class="p-2 font-bold bg-royal-600 hover:bg-royal-400 transition-colors duration-50 rounded-sm my-4 ml-4 text-sm"
+			>Contact Me</button
+		>
+	</section>
+</Layout>
