@@ -25,11 +25,8 @@ module.exports = {
 				layout: '0.2fr 2.6fr 0.2fr',
 			  },
 			fontFamily: {
-				rubik: ['Rubik', ...defaultTheme.fontFamily.sans],
-				ptSans: ["'PT Sans'", ...defaultTheme.fontFamily.sans],
-				ibmPlexSerif: ['"IBM Plex Serif"', ...defaultTheme.fontFamily.serif],
-				tinos: ['"Tinos"', ...defaultTheme.fontFamily.serif],
-				ibmPlexSans: ['"IBM Plex Sans"', ...defaultTheme.fontFamily.sans],
+				serif: ['"IBM Plex Serif"', ...defaultTheme.fontFamily.serif],
+				sans: ['"IBM Plex Sans"', ...defaultTheme.fontFamily.sans],
 			},
 			colors: {
 				background: "#fafaf8",
