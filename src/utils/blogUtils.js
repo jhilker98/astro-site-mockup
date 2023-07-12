@@ -3,5 +3,5 @@ export function getPostYear(date) {
 }
 
 export function getPostMonth(date) {
-    
+    return date.getFullMonth().toString().padStart(2, "0")
 }

@@ -1,4 +1,39 @@
 ---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
 ---
 
-<header class="grid-in-header bg-red-200">Hello from the header!</header>
+<header class="z-10 items-center bg-red-200 grid-in-header">
+    <button
+        class="justify-start h-full p-3 2xl:p-4 lg:hidden hover:bg-gray-400 dark:hover:bg-gray-700"
+        x-on:click="toggleSidebar();">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            viewBox="0 0 20 20"
+            fill="currentColor">
+            <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"></path>
+        </svg>
+    </button>
+    <nav class="items-center hidden h-full space-x-3 lg:flex">
+        <a
+            href="/"
+            class=`h-full p-3 hover:bg-red-300 ${currentPath === "" ? "border-b-2 border-blue-400" : ""}`
+            >Home</a
+        >
+        <a
+            href="/resume/"
+            class=`h-full p-3 hover:bg-red-300 ${currentPath === "resume" ? "border-b-2 border-blue-400" : ""}`
+            >Resumé</a
+        >
+
+        <a
+            href="/projects/"
+            class=`h-full p-3 hover:bg-red-300 ${currentPath === "projects" ? "border-b-2 border-blue-400" : ""}`
+            >Projects</a
+        >
+    </nav>
+</header>
