@@ -3,5 +3,28 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Resumé">
-    <article class="p-3">TODO: Resume Layout</article>
+    <article class="p-3 prose">
+        <div class="pl-5 border-l-2 border-gray-400">
+            <div
+                class="last:border-0 border-b-2 border-gray-300 dark:border-gray-700">
+                <details class="group">
+                    <summary
+                        class="list-none after:content-['▸'] after:transform group-open:after:rotate-90 after:transition-all duration-100 after:inline-block lg:flex">
+                        <span class="font-ibmPlexSerif text-xl">Job Title</span>
+                        <span
+                            class="block lg:inline lg:ml-auto font-ibmPlexSerif"
+                            >2022-{new Date().getFullYear()}</span
+                        >
+                    </summary>
+                    <p class="font-ibmPlexSans">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Assumenda voluptates earum deleniti tenetur dignissimos,
+                        maxime odio fuga. Inventore voluptas nihil earum ducimus
+                        doloremque! Aut officiis voluptates consectetur eligendi
+                        eos pariatur!
+                    </p>
+                </details>
+            </div>
+        </div>
+    </article>
 </Layout>
