@@ -6,7 +6,11 @@ import "@fontsource/ibm-plex-sans";
 const { title } = Astro.props;
 ---
 
-<html lang="en">
+<html
+	lang="en"
+	x-data="{darkMode: false}"
+	x-init="darkMode = JSON.parse(localStorage.getItem('darkMode')); $watch('darkMode', value => JSON.stringify(localStorage.setItem('darkMode', value)))"
+	:class="{'dark': darkMode === true}">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
