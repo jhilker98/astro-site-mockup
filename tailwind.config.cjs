@@ -103,6 +103,7 @@ module.exports = {
 	plugins: [
 		// grid areas plugin
 		require('@savvywombat/tailwindcss-grid-areas'),
-		require('tailwind-scrollbar')
+		require('tailwind-scrollbar'),
+		require('@tailwindcss/typography')
 	],
 }

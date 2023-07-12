@@ -26,14 +26,8 @@ const currentPath = pathname.slice(1); // remove the first "/"
         >
         <a
             href="/resume/"
-            class=`h-full p-3 hover:bg-red-300 ${currentPath === "resume" ? "border-b-2 border-blue-400" : ""}`
-            >Resumé</a
-        >
-
-        <a
-            href="/projects/"
-            class=`h-full p-3 hover:bg-red-300 ${currentPath === "projects" ? "border-b-2 border-blue-400" : ""}`
-            >Projects</a
+            class=`h-full p-3 hover:bg-red-300 ${currentPath === "resume/" ? "border-b-2 border-blue-400" : ""}`
+            >Resume</a
         >
     </nav>
 </header>
