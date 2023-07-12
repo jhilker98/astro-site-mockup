@@ -1,2 +1,38 @@
 ---
+interface Props {
+    title: string;
+    start: string;
+    end?: string;
+    employer: string;
+    location: string;
+}
+
+const {
+    title,
+    start,
+    end = "Present",
+    employer,
+    location,
+} = Astro.props as Props;
 ---
+
+<details class="group">
+    <summary
+        class="list-none after:content-['▸'] after:transform group-open:after:rotate-90 after:transition-all duration-100 after:inline-block lg:flex">
+        <span class="font-serif text-xl">{title}</span>
+        <span class="hidden lg:inline lg:ml-auto"
+            >{new Date(start).getFullYear()} &mdash; {
+                end != "Present" ? new Date(end).getFullYear() : end
+            }</span
+        >
+    </summary>
+    <span class="lg:hidden">
+        {new Date(start).getFullYear()} &mdash; {
+            end != "Present" ? new Date(end).getFullYear() : end
+        }
+    </span>
+    <span class="block mt-1">
+        {employer} &mdash; {location}
+    </span>
+    <slot />
+</details>
