@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon";
 const posts = await getCollection("blog");
 const pageTitle = "Home";
 
@@ -16,7 +17,7 @@ const availableForHire: boolean = true;
 			{headline}
 		</h1>
 		<p class="text-3xl font-semibold mx-4">{cta}</p>
-		<p class="ml-4 mt-4 prose prose-lg prose-slate dark:prose-invert">
+		<p class="ml-4 mt-4 prose prose-lg prose-slate">
 			I am primarily focused on creating accessible, performant, and
 			easy-to-use websites using free and open-source technologies such as
 			TailwindCSS, Hugo, and Astro. {
