@@ -7,5 +7,10 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), alpinejs(), sitemap(), mdx()]
+  markdown: {
+    drafts: true,
+  },
+  integrations: [tailwind(), alpinejs(), sitemap(), mdx({
+    drafts: true,
+  })]
 });
