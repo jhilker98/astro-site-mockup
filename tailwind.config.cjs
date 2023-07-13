@@ -25,7 +25,7 @@ module.exports = {
 				layout: '0.2fr 2.6fr 0.2fr',
 			  },
 			fontFamily: {
-				serif: ['"Fjord One"', ...defaultTheme.fontFamily.serif],
+				serif: ['"IBM Plex Serif"', ...defaultTheme.fontFamily.serif],
 				sans: ['"IBM Plex Sans"', ...defaultTheme.fontFamily.sans],
 			},
 			colors: {
