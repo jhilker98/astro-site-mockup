@@ -11,6 +11,9 @@ export default defineConfig({
   markdown: {
     drafts: true,
   },
+  experimental: {
+    assets: true,
+  },
   integrations: [
     tailwind(), alpinejs(), sitemap(), mdx({
     drafts: true,
